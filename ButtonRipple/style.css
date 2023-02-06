@@ -1,20 +1,54 @@
+:root{ /* default variable values, will be changed from the JS file */
+    --xPosition : 50%;
+    --yPosition : 50%;
+}
+
 body {
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: aliceblue;
+    font-family: sans-serif;
 }
 a{
     text-decoration: none;
 }
 .btn{
-    background-color: #666666;
-    color: white;
-    padding: 25px;
+    background-color: pink;
+    color: black;
+    padding: 20px 40px;
     font-size: 25px;
     font-weight: bold;
     border-radius: 10px;
-    border: 3px solid black;
-    text-shadow: 1px 1px 1px black;
+    box-shadow: 0 3px 8px #4a77ae;
+    position: relative;
+    overflow: hidden;  /* to hide everything that spills over the borders of the button */
+}
+
+.btn span{
+    position: relative;  /* for z-index to work we need to switch to relative position */
+    z-index: 1;  /*to show text of the button above the hovering ripple effect*/
+}
+
+.btn::before{
+    content: ""; /* We have to set the content value for the before and after pseudo elements*/
+    position: absolute;  /* for it to be absolute we need to make the parent element relative */
+    background-color: orangered;
+    opacity: 80%;
+    width: 0;
+    height: 0;
+    left: var(--xPosition);
+    top: var(--yPosition);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.7s, height 0.7s;
+}
+
+.btn:hover::before{  /* targeting the before pseudo element response to hover  */
+    width: 500px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+
 }
