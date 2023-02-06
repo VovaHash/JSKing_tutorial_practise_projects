@@ -18,6 +18,12 @@ body {
     margin: 15px;
 }
 
+.score{
+    color: #385532;
+    text-align: right;
+    padding: 0 10px;
+}
+
 h4{
     margin-top: 0;
     margin-bottom: 10px;
@@ -47,7 +53,7 @@ h1{
 }
 
 .btn{
-    margin: 10px auto 0 auto;
+    margin: 15px auto 0px auto;
     background-color: #67a967;
     color: white;
     font-size: 20px;
@@ -56,8 +62,14 @@ h1{
     border: none;
     border-radius: 5px;
     display: block;
-    width: 90%;
+    width: 95%;
     text-align: center;
     font-family: inherit;
+    box-shadow: 0 2px 5px  #273c27;
+    cursor: pointer;
+}
 
+.btn:hover{
+    background-color: #588e58;
+    transform: scale(1.02);
 }
